@@ -1,9 +1,18 @@
 ﻿<UserControl x:Class="UserControlBox.UserControl1"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <!--Is there a way to set the value of the dp from xaml here-->
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:userControlBox="clr-namespace:UserControlBox"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type userControlBox:UserControl1}">
+            <Setter Property="Uri" Value="App.xaml" />
+        </Style>
+    </UserControl.Resources>
+
+    <TextBlock Text="{Binding Uri, RelativeSource={RelativeSource AncestorType={x:Type userControlBox:UserControl1}}}" />
+    <!--  Is there a way to set the value of the dp from xaml here  -->
 </UserControl>
