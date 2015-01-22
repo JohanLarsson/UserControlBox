@@ -6,6 +6,6 @@
         Width="525"
         Height="350">
     <Grid>
-        <userControlBox:UserControl1 Uri="App.xaml" />
+        <userControlBox:UserControl1  />
     </Grid>
 </Window>
